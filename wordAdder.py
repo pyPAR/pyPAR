@@ -7,11 +7,12 @@ def set(arg, ida):
 	if len(arg)==0:
 		word=raw_input("Yangi so'zni kiriting !!!    ")
 	else:
-		word=arg
+		word=arg.lower()
 	ids=ida+1
 	typ=raw_input("So'z tipini kiriting !!!   ")
+	cr=int(raw_input("So'zga kayfiyat jihatdan baho bering.         "))
 	lg=lugat
-	lg[word[0]][word]=[word, ids, typ]
+	lg[word[0]][word]=[word, ids, typ, cr]
 	fil=open("words.py", "w")
 	fil.write("lugat="+str(lg))
 	fil.write("\nidsa="+str(ids))
@@ -27,8 +28,9 @@ def que(arg, idsss):
 		get(idsss)
 
 def getall(arg, idssj):
-	words=re.split("\W", arg)
-	for j in words:
+	arg.lower()
+	wor=re.split("\W", arg)
+	for j in wor:
 		try:
 			print words.lugat[j[0]][j][0]
 			print words.lugat[j[0]][j][1]
