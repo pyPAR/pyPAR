@@ -1,6 +1,7 @@
 import re
 import words
 #working with words
+#TEST
 lugat=words.lugat
 idsa=words.idsa
 def set(arg, ida):
